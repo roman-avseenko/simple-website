@@ -1,0 +1,6 @@
+project: simple-website
+configVersion: 1
+---
+image: simple_website
+dockerfile: Dockerfile
+---
