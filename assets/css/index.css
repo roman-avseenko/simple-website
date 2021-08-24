@@ -1,0 +1,142 @@
+body{
+	font-family: "Monotype Corsiva";
+	background-color: #FAF4C6;
+}
+
+.indexh1{
+	font-weight: 700;
+	font-size: 50px;
+	letter-spacing: 0.2em;
+	text-align: center;
+}
+
+.header{
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.mainLogo{
+	width: 20vw;
+	height: 6vw;
+	margin-top: 15px;
+	opacity: 0.6;
+}
+
+.prodName{
+	display: flex;
+	justify-content: center;
+	font-weight: bold;
+	letter-spacing: 0.1em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.mainLogo-cont{
+	width: 20vw;
+	height: 6vw;
+}
+
+.listMain{
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #B2A2D2;
+	border: 1px solid black;
+	border-radius: 12px;
+	border-width: 2px;
+	padding: 15px;
+}
+
+.content-text{
+	width: 80%;
+	margin-top: 40px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 30px;
+}
+
+.indexHyp{
+	color: black;
+	text-decoration: none;
+}
+
+.imageCont{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.image-main{
+	width: 450px;
+	height: 350px;
+	border: 2px solid black;
+	border-radius: 10px;
+	margin-right: 1%;
+	margin-bottom: 5px;
+}
+
+.image-prod{
+	width: 450px;
+	border: 2px solid black;
+	border-radius: 10px;
+	margin-right: 1%;
+	margin-bottom: 5px;
+}
+
+.endOfPage{
+	display: flex;
+	justify-content: space-around;
+	width: 90%;
+	height: 120px;
+	margin-top: 1%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #B2A2D2;
+	letter-spacing: 0.05em;
+	border: 1px solid black;
+	border-radius: 12px;
+	border-width: 2px;
+}
+
+.hypProd{
+	color: black;
+	text-decoration: none;
+	letter-spacing: 0.05em;
+	margin-top: 3px;
+	margin-bottom: 2px;
+}
+
+.prod{
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 12px;
+	border-width: 2px;
+	padding: 5px;
+	transition: 400ms;
+	width: 250px;
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.prod:hover{
+		font-size: 25px;
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+
+.sign{
+	font-size: 20px;
+	margin-top: 90px;
+}
+
+.pageName{
+	display: flex;
+	justify-content: space-around;
+}
