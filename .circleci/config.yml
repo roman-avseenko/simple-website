@@ -3,15 +3,10 @@ orbs:
   aws-cli: circleci/aws-cli@2.0.3
 jobs:
   deploy_app:
-    #executor: aws-cli/default
+    executor: aws-cli/default
     steps:
       - checkout
-      - run:
-          command: |
-            curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-            unzip awscliv2.zip
-            sudo ./aws/install
-
+      - aws-cli/setup
       - run:
           command:
             aws eks update-kubeconfig --name $CLUSTER_NAME
@@ -31,7 +26,7 @@ jobs:
       - run:
           command:
             werf converge --repo index.docker.io/faiiinttt/simple-website
-          name: Deploy application using werf
+          name: Deploy application using Werf
 workflows:
   version: 2
   deploy:
