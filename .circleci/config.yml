@@ -13,7 +13,7 @@ jobs:
           name: Update kubeconfig
       - run:
           command: |
-            docker login index.docker.io/faiiinttt/simple-website -u $DOCKER_USER -p DOCKER_PASSWORD
+            docker login index.docker.io/faiiinttt/simple-website -u $DOCKER_USER -p $DOCKER_PASSWORD
           name: Docker login
 
 workflows:
