@@ -10,6 +10,7 @@ jobs:
       - run:
           command: |
             aws eks update-kubeconfig --region $AWS_REGION --name $CLUSTER_NAME
+            aws s3 ls
           name: Update kubeconfig
 
 workflows:
