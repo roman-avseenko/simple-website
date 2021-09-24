@@ -8,13 +8,18 @@ jobs:
       - checkout
       - aws-cli/setup
       - run:
-          command: |
+          command:
             aws eks update-kubeconfig --name $CLUSTER_NAME
           name: Update kubeconfig
       - run:
-          command: |
+          command:
             docker login index.docker.io/faiiinttt/simple-website -u $DOCKER_USER -p $DOCKER_PASSWORD
           name: Docker login
+      - run:
+          command:
+            curl -L "https://tuf.werf.io/targets/releases/1.2.21/linux-amd64/bin/werf" -o /tmp/werf
+            sudo install /tmp/werf /usr/local/bin/werf
+          name: Install Werf
 
 workflows:
   version: 2
