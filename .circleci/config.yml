@@ -9,12 +9,11 @@ jobs:
       - aws-cli/setup
       - run:
           command: |
-          aws eks update-kubeconfig --region $AWS_REGION --name $CLUSTER_NAME
+            aws eks update-kubeconfig --region $AWS_REGION --name $CLUSTER_NAME
           name: Update kubeconfig
 
 workflows:
   version: 2
   deploy:
     jobs:
-      - deploy_app:
-          context: aws
+      - deploy_app
