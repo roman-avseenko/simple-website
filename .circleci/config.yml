@@ -7,7 +7,7 @@ jobs:
       image: ubuntu-2004:202107-02
     steps:
       - checkout
-      
+
       - run:
           command:
             aws eks update-kubeconfig --name $CLUSTER_NAME
@@ -26,7 +26,7 @@ jobs:
 
       - run:
           command:
-            werf converge --repo index.docker.io/faiiinttt/simple-website
+            werf converge --repo index.docker.io/faiiinttt/simple-website --repo-docker-hub-token=$DOCKER_HUB_TOKEN
           name: Deploy application using Werf
 workflows:
   version: 2
