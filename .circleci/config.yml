@@ -26,7 +26,7 @@ jobs:
 
       - run:
           command:
-            werf converge --repo index.docker.io/faiiinttt/simple-website --repo-docker-hub-token $DOCKER_HUB_TOKEN
+            werf converge --repo index.docker.io/faiiinttt/simple-website #--repo-docker-hub-token $DOCKER_HUB_TOKEN
           name: Deploy application using Werf
 workflows:
   version: 2
