@@ -19,6 +19,7 @@ jobs:
           command: |
             curl -L "https://tuf.werf.io/targets/releases/1.2.21/linux-amd64/bin/werf" -o /tmp/werf
             sudo install /tmp/werf /usr/local/bin/werf
+            werf --version
           name: Install Werf
 
 workflows:
