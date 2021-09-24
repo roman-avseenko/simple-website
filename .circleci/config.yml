@@ -24,7 +24,8 @@ jobs:
           name: Install Werf
 
       - run:
-          command:
+          command: |
+            sudo chmod 666 /var/run/docker.sock
             werf converge --repo index.docker.io/faiiinttt/simple-website --repo-docker-hub-token=$DOCKER_HUB_TOKEN
           name: Deploy application using Werf
 workflows:
