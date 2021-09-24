@@ -9,9 +9,12 @@ jobs:
       - aws-cli/setup
       - run:
           command: |
-            aws eks update-kubeconfig --region $AWS_REGION --name $CLUSTER_NAME
-            aws s3 ls
+            aws eks update-kubeconfig --name $CLUSTER_NAME
           name: Update kubeconfig
+      - run:
+          command: |
+            docker --version
+          name: Docker version
 
 workflows:
   version: 2
