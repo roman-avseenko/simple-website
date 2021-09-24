@@ -3,10 +3,11 @@ orbs:
   aws-cli: circleci/aws-cli@2.0.3
 jobs:
   deploy_app:
-    executor: aws-cli/default
+    machine:
+      image: ubuntu-2004:202107-02
     steps:
       - checkout
-      - aws-cli/setup
+      
       - run:
           command:
             aws eks update-kubeconfig --name $CLUSTER_NAME
