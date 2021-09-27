@@ -1,0 +1,37 @@
+name: Review Deployment
+on:
+ pull_request:
+   branches: [ main ]
+   types: [ opened, reopened, synchronize ]
+
+jobs:
+ converge:
+   name: Converge
+   runs-on: ubuntu-latest
+   steps:
+
+     - name: Checkout code
+       uses: actions/checkout@v2
+       with:
+         fetch-depth: 0
+
+     - name: Converge
+       uses: werf/actions/converge@v1.2
+       with:
+         env: pr-${{ github.event.number }}
+         kube-config-base64-data: ${{ secrets.KUBE_CONFIG_BASE64_DATA }}
+       env:
+         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+         AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+
+     - name: Dismiss
+       uses: werf/actions/dismiss@v1.2
+       with:
+         env: pr-${{ github.event.number }}
+         kube-config-base64-data: ${{ secrets.KUBE_CONFIG_BASE64_DATA }}
+       env:
+         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+         AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+       if: "contains( github.event.pull_request.labels.*.name, 'reviewed' )"
